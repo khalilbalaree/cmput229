@@ -1,0 +1,60 @@
+CMPUT 229 Student Submission License (Version 1.1)
+
+Copyright 2018 zijun wu
+Unauthorized redistribution is forbidden in all circumstances. Use of this software without explicit authorization from the author **or** CMPUT 229 Teaching Staff is prohibited.
+
+This software was produced as a solution for an assignment in the course CMPUT 229 (Computer Organization and Architecture I) at the University of Alberta, Canada. This solution is confidential and remains confidential after it is submitted for grading. The course staff has the right to run plagiarism-detection tools on any code developed under this license, even beyond the duration of the course.
+
+Copying any part of this solution without including this copyright notice is illegal.
+
+If any portion of this software is included in a solution submitted for grading at an educational institution, the submitter will be subject to the sanctions for plagiarism at that institution.
+
+This software cannot be publicly posted under any circumstances, whether by
+the original student or by a third party. If this software is found in any public website or public repository, the person finding it is kindly requested to immediately report, including the URL or other repository locating information, to the following email address: [cmput229@ualberta.ca](mailto:cmput229@ualberta.ca).
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Question1: number = 35
+
+Question2: maximum = d3
+
+Question3: 0x00400038
+
+Question4: 6 times; 
+	   The value in $t1: 0x00000000 0x00000014 0x00000022 0x00000034 0x00000056 0x00000013
+
+Question5: 0x10010018 0x10010019 0x1001001A 0x100100B 0x1001001C 0x1001001D
+
+Question6: 33 44 00 3c
+	   
+           Four bytes as ASCII characters: 3  D null <
+
+Question7:  0011 0011 0100 0100 0000 0000 0011 1100
+   	   
+            1100 1100 1011 1011 1111 1111 1100 0011 (complement)
+           +                                      1
+           -----------------------------------------
+	   =1100 1100 1011 1011 1111 1111 1100 0100
+		
+	   So four bytes in hexadecimal: CC BB FF C4
+	
+Question8:
+
+.word 21, 88, -5, -10：store 5 32-bit quantities 21, 88, -5, -10 in successive memory  words.
+
+.byte 10, 'c': store the number 10 and the character 'c' in successive bytes of memory.
+
+.align: aligns the next value on a word boundary.
+
+.space: allocates 9 bytes of space in the current segment.
+
+.asciiz "ABCD" : Store the string "ABCD" in memory and null-terminate it.
+
+.ascii "EF" : Store the string "EF" in memory, but do not null- terminate it.
+
+It stores the data in 0x10010022 and 0x10010023
+
+Question9: print $s0
+
+Question10: We convert the integers one by one using 'loop'. First we store the given number of integers into a register for example $t0, using 'beq' to check if the value in $t0 equals to zero, if yes, jump to branch 'exit'. If not, convert the endianness of the integer then put the value into the address of the target memory, the value in $t0 decreases by 1, the address in the source memory increments 4 and the address in the target memory increments 4.Then jump to loop again until exit.
